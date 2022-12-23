@@ -10,9 +10,20 @@
 		2349FD5B261E4F6900A1FEAA /* CodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD5A261E4F6900A1FEAA /* CodingChallengeApp.swift */; };
 		2349FD5F261E4F6A00A1FEAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2349FD5E261E4F6A00A1FEAA /* Assets.xcassets */; };
 		2349FD62261E4F6A00A1FEAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2349FD61261E4F6A00A1FEAA /* Preview Assets.xcassets */; };
-		2349FD6D261E4F6A00A1FEAA /* CodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD6C261E4F6A00A1FEAA /* CodingChallengeTests.swift */; };
 		2349FD78261E4F6A00A1FEAA /* CodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD77261E4F6A00A1FEAA /* CodingChallengeUITests.swift */; };
-		2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD88261E4F9900A1FEAA /* ShiftsView.swift */; };
+		2349FD89261E4F9900A1FEAA /* ShiftsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2349FD88261E4F9900A1FEAA /* ShiftsListView.swift */; };
+		75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */; };
+		75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */; };
+		75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */; };
+		75B91E9629562271004AC54A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E9529562271004AC54A /* Request.swift */; };
+		75B91E982956228D004AC54A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E972956228D004AC54A /* APIClient.swift */; };
+		75B91E9B29562712004AC54A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E9A29562712004AC54A /* Header.swift */; };
+		75B91E9D2956273E004AC54A /* AcceptHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E9C2956273E004AC54A /* AcceptHeader.swift */; };
+		75B91E9F2956274C004AC54A /* ContentTypeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E9E2956274C004AC54A /* ContentTypeHeader.swift */; };
+		75B91EA3295628B8004AC54A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91EA2295628B8004AC54A /* HTTPMethod.swift */; };
+		75B91EA5295628C8004AC54A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91EA4295628C8004AC54A /* APIError.swift */; };
+		75B91EA729562D42004AC54A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91EA629562D42004AC54A /* Session.swift */; };
+		75B91EAA29562DEC004AC54A /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91EA929562DEC004AC54A /* APIClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +50,23 @@
 		2349FD61261E4F6A00A1FEAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2349FD63261E4F6A00A1FEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2349FD68261E4F6A00A1FEAA /* CodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2349FD6C261E4F6A00A1FEAA /* CodingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengeTests.swift; sourceTree = "<group>"; };
 		2349FD6E261E4F6A00A1FEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2349FD73261E4F6A00A1FEAA /* CodingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2349FD77261E4F6A00A1FEAA /* CodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengeUITests.swift; sourceTree = "<group>"; };
 		2349FD79261E4F6A00A1FEAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2349FD88261E4F9900A1FEAA /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
+		2349FD88261E4F9900A1FEAA /* ShiftsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListView.swift; sourceTree = "<group>"; };
+		75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModel.swift; sourceTree = "<group>"; };
+		75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListInteractor.swift; sourceTree = "<group>"; };
+		75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModelTests.swift; sourceTree = "<group>"; };
+		75B91E9529562271004AC54A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		75B91E972956228D004AC54A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		75B91E9A29562712004AC54A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		75B91E9C2956273E004AC54A /* AcceptHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptHeader.swift; sourceTree = "<group>"; };
+		75B91E9E2956274C004AC54A /* ContentTypeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeHeader.swift; sourceTree = "<group>"; };
+		75B91EA2295628B8004AC54A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		75B91EA4295628C8004AC54A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		75B91EA629562D42004AC54A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		75B91EA929562DEC004AC54A /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +117,9 @@
 		2349FD59261E4F6900A1FEAA /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				75B91EA029562884004AC54A /* Networking */,
+				75B91E912955F01E004AC54A /* ShiftsList */,
 				2349FD5A261E4F6900A1FEAA /* CodingChallengeApp.swift */,
-				2349FD88261E4F9900A1FEAA /* ShiftsView.swift */,
 				2349FD5E261E4F6A00A1FEAA /* Assets.xcassets */,
 				2349FD63261E4F6A00A1FEAA /* Info.plist */,
 				2349FD60261E4F6A00A1FEAA /* Preview Content */,
@@ -115,7 +138,7 @@
 		2349FD6B261E4F6A00A1FEAA /* CodingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				2349FD6C261E4F6A00A1FEAA /* CodingChallengeTests.swift */,
+				75B91E942955F15D004AC54A /* ShiftsList */,
 				2349FD6E261E4F6A00A1FEAA /* Info.plist */,
 			);
 			path = CodingChallengeTests;
@@ -128,6 +151,64 @@
 				2349FD79261E4F6A00A1FEAA /* Info.plist */,
 			);
 			path = CodingChallengeUITests;
+			sourceTree = "<group>";
+		};
+		75B91E912955F01E004AC54A /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				2349FD88261E4F9900A1FEAA /* ShiftsListView.swift */,
+				75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */,
+				75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
+		75B91E942955F15D004AC54A /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				75B91EA929562DEC004AC54A /* APIClientTests.swift */,
+				75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
+		75B91E992956270A004AC54A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				75B91E9A29562712004AC54A /* Header.swift */,
+				75B91E9C2956273E004AC54A /* AcceptHeader.swift */,
+				75B91E9E2956274C004AC54A /* ContentTypeHeader.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		75B91EA029562884004AC54A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				75B91EAB29564044004AC54A /* Client */,
+				75B91EA1295628AF004AC54A /* Request */,
+				75B91E992956270A004AC54A /* Headers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		75B91EA1295628AF004AC54A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				75B91E9529562271004AC54A /* Request.swift */,
+				75B91EA2295628B8004AC54A /* HTTPMethod.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		75B91EAB29564044004AC54A /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				75B91E972956228D004AC54A /* APIClient.swift */,
+				75B91EA4295628C8004AC54A /* APIError.swift */,
+				75B91EA629562D42004AC54A /* Session.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +340,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2349FD89261E4F9900A1FEAA /* ShiftsView.swift in Sources */,
+				75B91E9629562271004AC54A /* Request.swift in Sources */,
+				75B91E982956228D004AC54A /* APIClient.swift in Sources */,
+				75B91E9B29562712004AC54A /* Header.swift in Sources */,
+				75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */,
+				75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */,
+				2349FD89261E4F9900A1FEAA /* ShiftsListView.swift in Sources */,
+				75B91E9D2956273E004AC54A /* AcceptHeader.swift in Sources */,
+				75B91E9F2956274C004AC54A /* ContentTypeHeader.swift in Sources */,
+				75B91EA729562D42004AC54A /* Session.swift in Sources */,
+				75B91EA3295628B8004AC54A /* HTTPMethod.swift in Sources */,
+				75B91EA5295628C8004AC54A /* APIError.swift in Sources */,
 				2349FD5B261E4F6900A1FEAA /* CodingChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2349FD6D261E4F6A00A1FEAA /* CodingChallengeTests.swift in Sources */,
+				75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */,
+				75B91EAA29562DEC004AC54A /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +514,7 @@
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +536,7 @@
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				INFOPLIST_FILE = CodingChallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				INFOPLIST_FILE = CodingChallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				INFOPLIST_FILE = CodingChallengeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HRU3V63R2;
 				INFOPLIST_FILE = CodingChallengeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

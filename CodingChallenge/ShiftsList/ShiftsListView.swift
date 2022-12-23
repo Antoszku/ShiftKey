@@ -1,13 +1,9 @@
-//
-//  ShiftsView.swift
-//  CodingChallenge
-//
-//  Created by Brady Miller on 4/7/21.
-//
-
 import SwiftUI
 
-struct ShiftsView: View {
+struct ShiftsListView: View {
+    
+    @ObservedObject var viewModel: ShiftsListViewModel
+    
     var body: some View {
         NavigationView {
             Group {
@@ -16,12 +12,15 @@ struct ShiftsView: View {
                     .padding()
             }
             .navigationTitle("Shifts")
+            .onAppear {
+                onAppear()
+            }
         }
     }
-}
-
-struct ShiftsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShiftsView()
+    
+    private func onAppear() {
+        Task {
+            await viewModel.onAppear()
+        }
     }
 }
