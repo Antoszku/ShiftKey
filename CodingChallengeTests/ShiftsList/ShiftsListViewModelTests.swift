@@ -15,8 +15,14 @@ class ShiftsListViewModelTests: XCTestCase {
 class ShiftsListInteractorStub: ShiftsListInteractor {
     var getShiftsCalled = false
 
-    func getShifts() async -> ShiftsForDatePresentable {
+    func getShifts() async -> [ShiftsForDatePresentable] {
         getShiftsCalled = true
-        return ShiftsForDatePresentable()
+        return []
+    }
+}
+
+extension ShiftsForDatePresentable {
+    static func build() -> Self {
+        .init(dto: .init(date: "ss"))
     }
 }

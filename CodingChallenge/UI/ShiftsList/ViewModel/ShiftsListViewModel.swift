@@ -10,14 +10,10 @@ final class ShiftsListViewModel: ObservableObject {
     
     func onAppear() async {
         do {
-            try await interactor.getShifts()
-        } catch {
-            
+            let shifts = try await interactor.getShifts()
+            print(shifts)
+        } catch let error {
+            print(error)
         }
     }
-}
-
-
-struct ShiftsForDatePresentable {
-    
 }

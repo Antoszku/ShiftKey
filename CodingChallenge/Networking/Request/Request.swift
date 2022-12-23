@@ -1,19 +1,19 @@
 import Foundation
 
 struct Request {
-    let url: URL
+    let url: String
     let method: HTTPMethod
-    let headers: [Header]
-    let queryItems: [URLQueryItem]?
+    let headers: [Headers]
+    let query: Query?
 
-    init(url: URL,
+    init(url: String,
          method: HTTPMethod,
-         headers: [Header] = [AcceptHeader.json, ContentTypeHeader.json],
-         queryItems: [URLQueryItem]? = nil)
+         headers: [Headers] = [.acceptJson, .contentJson],
+         query: Query? = nil)
     {
         self.url = url
         self.headers = headers
         self.method = method
-        self.queryItems = queryItems
+        self.query = query
     }
 }

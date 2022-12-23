@@ -1,4 +1,4 @@
-protocol Header {
-    var key: String { get }
-    var value: String { get }
+struct Header {
+    let key: String
+    let value: String
 }

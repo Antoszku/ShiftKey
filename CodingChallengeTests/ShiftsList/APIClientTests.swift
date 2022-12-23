@@ -5,38 +5,47 @@ final class APIClientTests: XCTestCase {
 
     func test_sendRequest_callSessionDataFor_withCorrectRequest() async {
         let session = SessionServiceMock()
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
-        let _: String? = try? await sut.sendRequest(request: .build())
+        let _: String? = try? await sut.sendRequest(.build())
 
-        XCTAssertEqual(session.dataCalledWithRequest?.url, URL(string: "google.pl"))
+        XCTAssertEqual(session.dataCalledWithRequest?.url, URL(string: "https://google.pl/"))
         XCTAssertEqual(session.dataCalledWithRequest?.httpMethod, "GET")
     }
 
     func test_sendRequest_callSessionDataFor_withPOSTHTTPMethod() async {
         let session = SessionServiceMock()
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
-        let _: String? = try? await sut.sendRequest(request: .build(method: .POST))
+        let _: String? = try? await sut.sendRequest(.build(method: .POST))
 
         XCTAssertEqual(session.dataCalledWithRequest?.httpMethod, "POST")
     }
 
     func test_sendRequest_callSessionDataFor_withCorrectQueryItems() async {
         let session = SessionServiceMock()
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
-        let _: String? = try? await sut.sendRequest(request: .build(queryItems: [.init(name: "Name", value: "Value")]))
+        let _: String? = try? await sut.sendRequest(.build(query: QueryStub(parameters: ["name": "value"])))
 
-        XCTAssertEqual(session.dataCalledWithRequest?.url, URL(string: "google.pl?Name=Value"))
+        XCTAssertEqual(session.dataCalledWithRequest?.url, URL(string: "https://google.pl/?name=value"))
+    }
+
+    func test_sendRequest_callSessionDataFor_withCorrectQueryItemsWhenOneOfThemHasNilValue() async {
+        let session = SessionServiceMock()
+        let sut = makeSut(sessionService: session)
+
+        let _: String? = try? await sut.sendRequest(.build(query: QueryStub(parameters: ["foo": "test", "some": nil])))
+
+        XCTAssertEqual(session.dataCalledWithRequest?.url, URL(string: "https://google.pl/?foo=test"))
     }
 
     func test_sendRequest_callSessionDataFor_withCorrectHeader() async {
         let session = SessionServiceMock()
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
         let expectedHeaders = ["Accept": "application/json", "Content-Type": "application/json"]
 
-        let _: String? = try? await sut.sendRequest(request: .build(headers: [ContentTypeHeader.json, AcceptHeader.json]))
+        let _: String? = try? await sut.sendRequest(.build(headers: [.acceptJson, .contentJson]))
 
         let headers = session.dataCalledWithRequest?.allHTTPHeaderFields
         XCTAssertEqual(headers, expectedHeaders)
@@ -47,9 +56,9 @@ final class APIClientTests: XCTestCase {
         let encoded = try! JSONEncoder().encode(expectedResult)
         let session = SessionServiceMock()
         session.returnData = (encoded, HTTPURLResponse())
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
-        let result: String? = try? await sut.sendRequest(request: .build())
+        let result: String? = try? await sut.sendRequest(.build())
 
         XCTAssertEqual(result, expectedResult)
     }
@@ -62,26 +71,26 @@ final class APIClientTests: XCTestCase {
                                                        statusCode: 299,
                                                        httpVersion: nil,
                                                        headerFields: nil)!)
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
-        let result: String? = try? await sut.sendRequest(request: .build())
+        let result: String? = try? await sut.sendRequest(.build())
 
         XCTAssertEqual(result, expectedResult)
     }
-    
+
     func test_sendRequst_throwParsingError() async {
         let session = SessionServiceMock()
         session.returnData = (Data(), HTTPURLResponse(url: URL(string: "google.pl")!,
                                                       statusCode: 200,
                                                       httpVersion: nil,
                                                       headerFields: nil)!)
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
         do {
-            let _: String = try await sut.sendRequest(request: .build())
+            let _: String = try await sut.sendRequest(.build())
             XCTFail()
         } catch APIError.parsingError {
-        
+
         } catch {
             XCTFail()
         }
@@ -94,10 +103,10 @@ final class APIClientTests: XCTestCase {
                                                       statusCode: expectedCode,
                                                       httpVersion: nil,
                                                       headerFields: nil)!)
-        let sut = DefaultAPIClient(session: session)
+        let sut = makeSut(sessionService: session)
 
         do {
-            let _: String = try await sut.sendRequest(request: .build())
+            let _: String = try await sut.sendRequest(.build())
             XCTFail()
         } catch APIError.serverError(let code) {
             XCTAssertEqual(code, expectedCode)
@@ -106,11 +115,17 @@ final class APIClientTests: XCTestCase {
         }
     }
 
+    private func makeSut(sessionService: SessionService = SessionServiceMock(),
+                         networkConfiguration: NetworkConfiguration = NetworkConfiguration(scheme: "https", host: "google.pl")) -> DefaultAPIClient {
+        DefaultAPIClient(session: sessionService, networkConfiguration: networkConfiguration)
+
+    }
+
 }
 
 extension Request {
-    static func build(method: HTTPMethod = .GET, headers: [Header] = [], queryItems: [URLQueryItem]? = nil) -> Self {
-        return .init(url: URL(string: "google.pl")!, method: method, headers: headers, queryItems: queryItems)
+    static func build(method: HTTPMethod = .GET, headers: [Headers] = [], query: Query? = nil) -> Self {
+        return .init(url: "/", method: method, headers: headers, query: query)
     }
 }
 
@@ -123,4 +138,10 @@ final class SessionServiceMock: SessionService {
         dataCalledWithRequest = request
         return returnData
     }
+}
+
+struct QueryStub: Query {
+    var parameters: [String: String?]
+
+
 }
