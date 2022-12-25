@@ -23,6 +23,6 @@ class ShiftsListInteractorStub: ShiftsListInteractor {
 
 extension ShiftsForDatePresentable {
     static func build() -> Self {
-        .init(dto: .init(date: "ss"))
+        .init(dto: .init(date: "ss", shifts: []))
     }
 }

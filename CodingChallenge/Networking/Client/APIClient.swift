@@ -8,6 +8,7 @@ final class DefaultAPIClient: APIClient {
 
     private let session: SessionService
     private let networkConfiguration: NetworkConfiguration
+    private let decoder = DefaultDecoder()
 
     init(session: SessionService = DefaultSessionService(),
          networkConfiguration: NetworkConfiguration = NetworkConfiguration()) {
@@ -28,8 +29,8 @@ final class DefaultAPIClient: APIClient {
             case 200...299:
                 print("[Response]:")
                 printPrettyJson(for: data)
-                guard let response = try? JSONDecoder().decode(T.self, from: data) else { throw APIError.parsingError }
-                return response
+                return try decoder.decode(data: data)
+
             default:
                 throw APIError.serverError(code: response.statusCode)
             }
