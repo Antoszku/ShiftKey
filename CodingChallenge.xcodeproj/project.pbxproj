@@ -18,6 +18,15 @@
 		754BC47F2957DB8E00582552 /* ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC47E2957DB8E00582552 /* ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift */; };
 		754BC4822957DCDD00582552 /* Supportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC4812957DCDD00582552 /* Supportable.swift */; };
 		754BC4842957DEBA00582552 /* DefaultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC4832957DEBA00582552 /* DefaultDecoder.swift */; };
+		754BC4862958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC4852958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift */; };
+		754BC4882958D1F700582552 /* ShiftPresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC4872958D1F700582552 /* ShiftPresentableTests.swift */; };
+		754BC48C2958D94100582552 /* ShiftsForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC48B2958D94100582552 /* ShiftsForDate.swift */; };
+		754BC48E295942E600582552 /* ShiftPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC48D295942E600582552 /* ShiftPresentable.swift */; };
+		754BC490295949BB00582552 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC48F295949BB00582552 /* APIClientMock.swift */; };
+		754BC492295949F100582552 /* ShiftsListInteractorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC491295949F100582552 /* ShiftsListInteractorStub.swift */; };
+		754BC49429594AEC00582552 /* ShiftsListView+ShiftsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */; };
+		754BC49629594BAD00582552 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49529594BAD00582552 /* Query.swift */; };
+		754BC49829594BBD00582552 /* ShiftFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49729594BBD00582552 /* ShiftFilter.swift */; };
 		75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */; };
 		75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */; };
 		75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */; };
@@ -72,6 +81,15 @@
 		754BC47E2957DB8E00582552 /* ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift"; sourceTree = "<group>"; };
 		754BC4812957DCDD00582552 /* Supportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supportable.swift; sourceTree = "<group>"; };
 		754BC4832957DEBA00582552 /* DefaultDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecoder.swift; sourceTree = "<group>"; };
+		754BC4852958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView+ShiftsSection+ShiftCell.swift"; sourceTree = "<group>"; };
+		754BC4872958D1F700582552 /* ShiftPresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPresentableTests.swift; sourceTree = "<group>"; };
+		754BC48B2958D94100582552 /* ShiftsForDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsForDate.swift; sourceTree = "<group>"; };
+		754BC48D295942E600582552 /* ShiftPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPresentable.swift; sourceTree = "<group>"; };
+		754BC48F295949BB00582552 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
+		754BC491295949F100582552 /* ShiftsListInteractorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListInteractorStub.swift; sourceTree = "<group>"; };
+		754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView+ShiftsSection.swift"; sourceTree = "<group>"; };
+		754BC49529594BAD00582552 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		754BC49729594BBD00582552 /* ShiftFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftFilter.swift; sourceTree = "<group>"; };
 		75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModel.swift; sourceTree = "<group>"; };
 		75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListInteractor.swift; sourceTree = "<group>"; };
 		75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModelTests.swift; sourceTree = "<group>"; };
@@ -139,8 +157,9 @@
 		2349FD59261E4F6900A1FEAA /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				754BC4892958D92B00582552 /* Domain */,
 				75B91EAD2956490E004AC54A /* UI */,
-				75B91EAC29564902004AC54A /* Domain */,
+				75B91EAC29564902004AC54A /* Infrastructure */,
 				75B91EA029562884004AC54A /* Networking */,
 				2349FD5A261E4F6900A1FEAA /* CodingChallengeApp.swift */,
 				2349FD5E261E4F6A00A1FEAA /* Assets.xcassets */,
@@ -184,6 +203,22 @@
 			path = Supportable;
 			sourceTree = "<group>";
 		};
+		754BC4892958D92B00582552 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				754BC48A2958D93900582552 /* ShiftsList */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		754BC48A2958D93900582552 /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				754BC48B2958D94100582552 /* ShiftsForDate.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
 		75B91E912955F01E004AC54A /* ShiftsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +235,9 @@
 				75B91EA929562DEC004AC54A /* APIClientTests.swift */,
 				75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */,
 				75B91EBE29564FF6004AC54A /* ShiftsListServiceTests.swift */,
+				754BC4872958D1F700582552 /* ShiftPresentableTests.swift */,
+				754BC48F295949BB00582552 /* APIClientMock.swift */,
+				754BC491295949F100582552 /* ShiftsListInteractorStub.swift */,
 			);
 			path = ShiftsList;
 			sourceTree = "<group>";
@@ -245,12 +283,12 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
-		75B91EAC29564902004AC54A /* Domain */ = {
+		75B91EAC29564902004AC54A /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				75B91EAE29564917004AC54A /* ShiftsList */,
 			);
-			path = Domain;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		75B91EAD2956490E004AC54A /* UI */ = {
@@ -266,6 +304,8 @@
 			children = (
 				75B91EB129564938004AC54A /* DTO */,
 				75B91EAF29564923004AC54A /* ShiftsListService.swift */,
+				754BC49529594BAD00582552 /* Query.swift */,
+				754BC49729594BBD00582552 /* ShiftFilter.swift */,
 			);
 			path = ShiftsList;
 			sourceTree = "<group>";
@@ -287,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				2349FD88261E4F9900A1FEAA /* ShiftsListView.swift */,
+				754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */,
+				754BC4852958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				75B91EB929564A0C004AC54A /* ShiftsForDatePresentable.swift */,
+				754BC48D295942E600582552 /* ShiftPresentable.swift */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";
@@ -446,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B91EB529564969004AC54A /* ShiftsForDateResponseDTO.swift in Sources */,
+				754BC4862958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift in Sources */,
 				75B91E9629562271004AC54A /* Request.swift in Sources */,
 				75B91E982956228D004AC54A /* APIClient.swift in Sources */,
 				75B91E9B29562712004AC54A /* Headers.swift in Sources */,
@@ -454,17 +498,22 @@
 				75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */,
 				754BC47D2957DB7B00582552 /* ShiftsForDateDTO+ShiftDTO+SkillDTO.swift in Sources */,
 				754BC47F2957DB8E00582552 /* ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift in Sources */,
+				754BC49629594BAD00582552 /* Query.swift in Sources */,
 				754BC4842957DEBA00582552 /* DefaultDecoder.swift in Sources */,
 				75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */,
 				75B91EBD29564F9E004AC54A /* NetworkConfiguration.swift in Sources */,
 				2349FD89261E4F9900A1FEAA /* ShiftsListView.swift in Sources */,
 				75B91EC129565B0C004AC54A /* Header.swift in Sources */,
+				754BC49829594BBD00582552 /* ShiftFilter.swift in Sources */,
 				75B91EA729562D42004AC54A /* Session.swift in Sources */,
 				754BC4792957DAD400582552 /* ShiftsForDateDTO+ShiftDTO.swift in Sources */,
 				75B91EB329564940004AC54A /* ShiftsForDateDTO.swift in Sources */,
 				754BC4822957DCDD00582552 /* Supportable.swift in Sources */,
+				754BC48E295942E600582552 /* ShiftPresentable.swift in Sources */,
 				75B91EA3295628B8004AC54A /* HTTPMethod.swift in Sources */,
+				754BC48C2958D94100582552 /* ShiftsForDate.swift in Sources */,
 				75B91EB029564923004AC54A /* ShiftsListService.swift in Sources */,
+				754BC49429594AEC00582552 /* ShiftsListView+ShiftsSection.swift in Sources */,
 				75B91EA5295628C8004AC54A /* APIError.swift in Sources */,
 				2349FD5B261E4F6900A1FEAA /* CodingChallengeApp.swift in Sources */,
 			);
@@ -475,8 +524,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */,
+				754BC492295949F100582552 /* ShiftsListInteractorStub.swift in Sources */,
+				754BC4882958D1F700582552 /* ShiftPresentableTests.swift in Sources */,
 				75B91EBF29564FF6004AC54A /* ShiftsListServiceTests.swift in Sources */,
 				75B91EAA29562DEC004AC54A /* APIClientTests.swift in Sources */,
+				754BC490295949BB00582552 /* APIClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,6 +2,7 @@ import Foundation
 
 final class ShiftsListViewModel: ObservableObject {
 
+    @Published var sections = [ShiftsForDatePresentable]()
     private let interactor: ShiftsListInteractor
     
     init(interactor: ShiftsListInteractor = DefaultShiftsListInteractor()) {

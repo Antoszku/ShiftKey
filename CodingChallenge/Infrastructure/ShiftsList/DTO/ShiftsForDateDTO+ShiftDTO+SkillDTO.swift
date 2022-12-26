@@ -1,6 +1,6 @@
 extension ShiftsForDateDTO.ShiftDTO {
-    struct SkillDTO: Decodable, Equatable {
-        enum Name: String, Decodable, Equatable {
+    struct SkillDTO: Decodable {
+        enum Name: String, Decodable {
             case longTermCare = "Long Term Care"
             case ER
             case acuteCare = "Acute Care"

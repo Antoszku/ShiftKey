@@ -12,6 +12,6 @@ final class DefaultShiftsListInteractor: ShiftsListInteractor {
 
     func getShifts() async throws -> [ShiftsForDatePresentable] {
         let shiftsForDateDTO = try await service.getShifts(filter: ShiftFilter(type: nil, address: "TX", radius: nil))
-        return shiftsForDateDTO.map { ShiftsForDatePresentable(dto: $0) }
+        return shiftsForDateDTO.map { ShiftsForDatePresentable(domain: $0) }
     }
 }

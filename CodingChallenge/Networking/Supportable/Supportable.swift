@@ -1,4 +1,4 @@
-enum Supportable<T: Decodable & Equatable>: Decodable, Equatable {
+enum Supportable<T: Decodable>: Decodable {
     case supported(T)
     case unsupported
 
@@ -11,20 +11,6 @@ enum Supportable<T: Decodable & Equatable>: Decodable, Equatable {
             // TODO: Send unsupported to analytics to track it
             print("🚨🚨🚨 Error while decoding enum \(T.self) \(error)")
             self = .unsupported
-        }
-    }
-}
-
-extension Supportable {
-    static func == (lhs: Supportable<T>, rhs: Supportable<T>) -> Bool {
-        switch (lhs, rhs) {
-
-        case (.unsupported, .unsupported):
-            return true
-        case (.supported(let lhsValue), .supported(let rhsValue)):
-            return lhsValue == rhsValue
-        default:
-            return false
         }
     }
 }

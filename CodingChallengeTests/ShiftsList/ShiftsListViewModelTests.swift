@@ -1,7 +1,7 @@
 import XCTest
 @testable import CodingChallenge
 
-class ShiftsListViewModelTests: XCTestCase {
+final class ShiftsListViewModelTests: XCTestCase {
     func test_onAppear_callInteractorGetShifts() async {
         let interactor = ShiftsListInteractorStub()
         let sut = ShiftsListViewModel(interactor: interactor)
@@ -9,20 +9,5 @@ class ShiftsListViewModelTests: XCTestCase {
         await sut.onAppear()
 
         XCTAssertTrue(interactor.getShiftsCalled)
-    }
-}
-
-class ShiftsListInteractorStub: ShiftsListInteractor {
-    var getShiftsCalled = false
-
-    func getShifts() async -> [ShiftsForDatePresentable] {
-        getShiftsCalled = true
-        return []
-    }
-}
-
-extension ShiftsForDatePresentable {
-    static func build() -> Self {
-        .init(dto: .init(date: "ss", shifts: []))
     }
 }
