@@ -4,7 +4,13 @@ extension ShiftDetailsView {
     struct Row: View {
         let icon: Image
         let title: String
-        let isPremiumRate = false
+        let isPremiumRate: Bool
+
+        init(icon: Image, title: String, isPremiumRate: Bool = false) {
+            self.icon = icon
+            self.title = title
+            self.isPremiumRate = isPremiumRate
+        }
 
         private let spacing: CGFloat = 16
         private let iconFont: Font = .title3

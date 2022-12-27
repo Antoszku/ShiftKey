@@ -16,7 +16,7 @@ struct ShiftDetailsView: View {
                     Row(icon: shift.dateIcon, title: shift.date)
                     Divider()
                     if shift.isPremiumRate {
-                        Row(icon: shift.premiumRateIcon, title: shift.premiumRate)
+                        Row(icon: shift.premiumRateIcon, title: shift.premiumRate, isPremiumRate: true)
                     }
                     Row(icon: shift.abbreviationIcon, title: shift.abbreviation)
                     Row(icon: shift.shiftTypeIcon, title: shift.shiftType)
