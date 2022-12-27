@@ -13,3 +13,17 @@ extension ShiftsForDateDTO.ShiftDTO {
         let color: String
     }
 }
+
+
+extension ShiftsForDate.Shift.Skill {
+    init(dto: ShiftsForDateDTO.ShiftDTO.SkillDTO) {
+        let name: String
+        switch dto.name {
+        case .supported(let text):
+            name = text.rawValue
+        case .unsupported:
+            name = "NONE"
+        }
+        self.init(name: name, color: dto.color)
+    }
+}

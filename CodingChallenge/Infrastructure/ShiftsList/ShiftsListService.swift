@@ -1,5 +1,3 @@
-import Foundation // TODO: REMOVE
-
 protocol ShiftsListService {
     func getShifts(filter: ShiftFilter) async throws -> [ShiftsForDate]
 }

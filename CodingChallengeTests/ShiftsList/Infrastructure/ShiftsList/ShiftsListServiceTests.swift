@@ -20,8 +20,9 @@ final class ShiftsListServiceTests: XCTestCase {
     }
     
     func test_getShifts_returnShiftForDateDTOArray() async {
-        let dto = [ShiftsForDateDTO(date: "2020-12-12", shifts: [])]
-        let expectedResult = [ShiftsForDate(date: "2020-12-12", shifts: [])]
+        let date = Date(timeIntervalSince1970: 1_000_000)
+        let dto = [ShiftsForDateDTO(date: date, shifts: [])]
+        let expectedResult = [ShiftsForDate(date: date, shifts: [])]
         let apiClient = APIClientMock<ShiftsForDateResponseDTO>()
         let sut = DefaultShiftsListService(apiClient: apiClient)
         let filter = ShiftFilter(type: .list, address: "Cracow, PL", radius: 10)
@@ -30,5 +31,5 @@ final class ShiftsListServiceTests: XCTestCase {
         let result = try? await sut.getShifts(filter: filter)
         
         XCTAssertEqual(result, expectedResult)
-    } 
+    }
 }

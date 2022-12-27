@@ -1,23 +1,31 @@
-struct ShiftPresentable: Identifiable {
+import Foundation
+
+struct ShiftPresentable: Identifiable, Equatable {
     let id: Int
-    let startTime: String
-    let endTime: String
+    let workingHours: String
     let abbreviation: String
     let facilityType: String
-    let facilityTypeColor: String
-    let specialty: String
+    let skill: String
+    let skillColor: String
     let premiumRate: Bool
-    let withinDistance: Int
-    
+    let distance: String
+
     init(shift: ShiftsForDate.Shift) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = .UTC
+        dateFormatter.dateFormat = "h:mma"
+        dateFormatter.amSymbol = "am"
+        dateFormatter.pmSymbol = "pm"
+        let startTime = dateFormatter.string(from: shift.normalizedStartDateTime)
+        let endtime = dateFormatter.string(from: shift.normalizedEndDateTime)
+
         self.id = shift.shiftId
-        self.startTime = shift.normalizedStartDateTime
-        self.endTime = shift.normalizedEndDateTime
+        self.workingHours = "\(startTime) - \(endtime)"
         self.abbreviation = shift.localizedSpecialty.abbreviation
         self.facilityType = shift.facilityType.name
-        self.facilityTypeColor = shift.facilityType.color
-        self.specialty = shift.localizedSpecialty.name
         self.premiumRate = shift.premiumRate
-        self.withinDistance = shift.withinDistance
+        self.distance = "\(shift.withinDistance) miles"
+        self.skill = shift.skill.name.uppercased()
+        self.skillColor = shift.skill.color
     }
 }

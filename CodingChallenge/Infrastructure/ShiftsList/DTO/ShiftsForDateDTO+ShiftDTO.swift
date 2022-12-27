@@ -1,10 +1,12 @@
+import Foundation
+
 extension ShiftsForDateDTO {
     struct ShiftDTO: Decodable {
         let shiftId: Int
-        let startTime: String
-        let endTime: String
-        let normalizedStartDateTime: String
-        let normalizedEndDateTime: String
+        @DateFormatted<ISO8601Strategy> var startTime: Date
+        @DateFormatted<ISO8601Strategy> var endTime: Date
+        @DateFormatted<NormalizedDateStrategy> var normalizedStartDateTime: Date
+        @DateFormatted<NormalizedDateStrategy> var normalizedEndDateTime: Date
         let timezone: String
         let premiumRate: Bool
         let covid: Bool
@@ -19,12 +21,14 @@ extension ShiftsForDateDTO {
 extension ShiftsForDate.Shift {
     init(dto: ShiftsForDateDTO.ShiftDTO) {
         self.init(shiftId: dto.shiftId,
+                  startTime: dto.startTime,
                   normalizedStartDateTime: dto.normalizedStartDateTime,
                   normalizedEndDateTime: dto.normalizedEndDateTime,
                   localizedSpecialty: .init(dto: dto.localizedSpecialty),
                   facilityType: .init(dto: dto.facilityType),
                   premiumRate: dto.premiumRate,
-                  withinDistance: dto.withinDistance
+                  withinDistance: dto.withinDistance,
+                  skill: .init(dto: dto.skill)
         )
     }
 }

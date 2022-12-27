@@ -27,6 +27,25 @@
 		754BC49429594AEC00582552 /* ShiftsListView+ShiftsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */; };
 		754BC49629594BAD00582552 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49529594BAD00582552 /* Query.swift */; };
 		754BC49829594BBD00582552 /* ShiftFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49729594BBD00582552 /* ShiftFilter.swift */; };
+		754BC49A295A8A0F00582552 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC499295A8A0F00582552 /* Color.swift */; };
+		754BC49C295B1CDE00582552 /* ShiftsListView+CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49B295B1CDE00582552 /* ShiftsListView+CalendarHeader.swift */; };
+		754BC49E295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49D295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift */; };
+		754BC4A0295B45AB00582552 /* ShiftsForDate+Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC49F295B45AB00582552 /* ShiftsForDate+Shift.swift */; };
+		754BC4A2295B4AD700582552 /* ShiftsForDatePresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754BC4A1295B4AD700582552 /* ShiftsForDatePresentableTests.swift */; };
+		757D5BB1295B4E0C00ADE4A5 /* TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BB0295B4E0C00ADE4A5 /* TimeZone.swift */; };
+		757D5BB4295B519400ADE4A5 /* ShiftsListView.CalendarHeader+WeekCell+DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BB3295B519400ADE4A5 /* ShiftsListView.CalendarHeader+WeekCell+DayCell.swift */; };
+		757D5BB8295B521E00ADE4A5 /* DateCodableStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BB7295B521E00ADE4A5 /* DateCodableStrategy.swift */; };
+		757D5BBA295B522E00ADE4A5 /* DateFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BB9295B522E00ADE4A5 /* DateFormatted.swift */; };
+		757D5BBC295B523800ADE4A5 /* OnlyDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BBB295B523800ADE4A5 /* OnlyDateStrategy.swift */; };
+		757D5BBE295B524E00ADE4A5 /* ISO8601Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BBD295B524E00ADE4A5 /* ISO8601Strategy.swift */; };
+		757D5BC0295B525C00ADE4A5 /* NormalizedDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BBF295B525C00ADE4A5 /* NormalizedDateStrategy.swift */; };
+		757D5BCB295B53C900ADE4A5 /* ShiftsForDate+ShiftBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BCA295B53C900ADE4A5 /* ShiftsForDate+ShiftBuilder.swift */; };
+		757D5BCD295B543000ADE4A5 /* DayOfAYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BCC295B543000ADE4A5 /* DayOfAYear.swift */; };
+		757D5BCF295B544100ADE4A5 /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BCE295B544100ADE4A5 /* Locale.swift */; };
+		757D5BD1295B545000ADE4A5 /* WeekOfAYearIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BD0295B545000ADE4A5 /* WeekOfAYearIdentifable.swift */; };
+		757D5BD3295B545F00ADE4A5 /* WeekOfAYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BD2295B545F00ADE4A5 /* WeekOfAYear.swift */; };
+		757D5BD5295B547000ADE4A5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BD4295B547000ADE4A5 /* Date.swift */; };
+		757D5BD7295B6FBC00ADE4A5 /* DayOfAYearIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BD6295B6FBC00ADE4A5 /* DayOfAYearIdentifiable.swift */; };
 		75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */; };
 		75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */; };
 		75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */; };
@@ -90,6 +109,25 @@
 		754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView+ShiftsSection.swift"; sourceTree = "<group>"; };
 		754BC49529594BAD00582552 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		754BC49729594BBD00582552 /* ShiftFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftFilter.swift; sourceTree = "<group>"; };
+		754BC499295A8A0F00582552 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		754BC49B295B1CDE00582552 /* ShiftsListView+CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView+CalendarHeader.swift"; sourceTree = "<group>"; };
+		754BC49D295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView.CalendarHeader+WeekCell.swift"; sourceTree = "<group>"; };
+		754BC49F295B45AB00582552 /* ShiftsForDate+Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsForDate+Shift.swift"; sourceTree = "<group>"; };
+		754BC4A1295B4AD700582552 /* ShiftsForDatePresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsForDatePresentableTests.swift; sourceTree = "<group>"; };
+		757D5BB0295B4E0C00ADE4A5 /* TimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
+		757D5BB3295B519400ADE4A5 /* ShiftsListView.CalendarHeader+WeekCell+DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsListView.CalendarHeader+WeekCell+DayCell.swift"; sourceTree = "<group>"; };
+		757D5BB7295B521E00ADE4A5 /* DateCodableStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCodableStrategy.swift; sourceTree = "<group>"; };
+		757D5BB9295B522E00ADE4A5 /* DateFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatted.swift; sourceTree = "<group>"; };
+		757D5BBB295B523800ADE4A5 /* OnlyDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyDateStrategy.swift; sourceTree = "<group>"; };
+		757D5BBD295B524E00ADE4A5 /* ISO8601Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601Strategy.swift; sourceTree = "<group>"; };
+		757D5BBF295B525C00ADE4A5 /* NormalizedDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizedDateStrategy.swift; sourceTree = "<group>"; };
+		757D5BCA295B53C900ADE4A5 /* ShiftsForDate+ShiftBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftsForDate+ShiftBuilder.swift"; sourceTree = "<group>"; };
+		757D5BCC295B543000ADE4A5 /* DayOfAYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfAYear.swift; sourceTree = "<group>"; };
+		757D5BCE295B544100ADE4A5 /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
+		757D5BD0295B545000ADE4A5 /* WeekOfAYearIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekOfAYearIdentifable.swift; sourceTree = "<group>"; };
+		757D5BD2295B545F00ADE4A5 /* WeekOfAYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekOfAYear.swift; sourceTree = "<group>"; };
+		757D5BD4295B547000ADE4A5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		757D5BD6295B6FBC00ADE4A5 /* DayOfAYearIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfAYearIdentifiable.swift; sourceTree = "<group>"; };
 		75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModel.swift; sourceTree = "<group>"; };
 		75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListInteractor.swift; sourceTree = "<group>"; };
 		75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModelTests.swift; sourceTree = "<group>"; };
@@ -180,6 +218,7 @@
 		2349FD6B261E4F6A00A1FEAA /* CodingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				757D5BC6295B537B00ADE4A5 /* Networking */,
 				75B91E942955F15D004AC54A /* ShiftsList */,
 				2349FD6E261E4F6A00A1FEAA /* Info.plist */,
 			);
@@ -206,6 +245,7 @@
 		754BC4892958D92B00582552 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				757D5BC1295B530500ADE4A5 /* Utilities */,
 				754BC48A2958D93900582552 /* ShiftsList */,
 			);
 			path = Domain;
@@ -215,8 +255,118 @@
 			isa = PBXGroup;
 			children = (
 				754BC48B2958D94100582552 /* ShiftsForDate.swift */,
+				754BC49729594BBD00582552 /* ShiftFilter.swift */,
+				754BC49F295B45AB00582552 /* ShiftsForDate+Shift.swift */,
 			);
 			path = ShiftsList;
+			sourceTree = "<group>";
+		};
+		757D5BB2295B4ECF00ADE4A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				754BC499295A8A0F00582552 /* Color.swift */,
+				757D5BB0295B4E0C00ADE4A5 /* TimeZone.swift */,
+				757D5BCE295B544100ADE4A5 /* Locale.swift */,
+				757D5BD4295B547000ADE4A5 /* Date.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		757D5BB5295B520A00ADE4A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BB6295B521100ADE4A5 /* DateCodableStrategy */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		757D5BB6295B521100ADE4A5 /* DateCodableStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BB7295B521E00ADE4A5 /* DateCodableStrategy.swift */,
+				757D5BB9295B522E00ADE4A5 /* DateFormatted.swift */,
+				757D5BBB295B523800ADE4A5 /* OnlyDateStrategy.swift */,
+				757D5BBD295B524E00ADE4A5 /* ISO8601Strategy.swift */,
+				757D5BBF295B525C00ADE4A5 /* NormalizedDateStrategy.swift */,
+			);
+			path = DateCodableStrategy;
+			sourceTree = "<group>";
+		};
+		757D5BC1295B530500ADE4A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				754BC49529594BAD00582552 /* Query.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		757D5BC2295B535500ADE4A5 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BC9295B53AB00ADE4A5 /* Helpers */,
+				757D5BC4295B536000ADE4A5 /* ShiftsList */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		757D5BC3295B535B00ADE4A5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BC5295B536600ADE4A5 /* ShiftsList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		757D5BC4295B536000ADE4A5 /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				75B91EBE29564FF6004AC54A /* ShiftsListServiceTests.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
+		757D5BC5295B536600ADE4A5 /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BC8295B539D00ADE4A5 /* Helpers */,
+				75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */,
+				754BC4A1295B4AD700582552 /* ShiftsForDatePresentableTests.swift */,
+				754BC4872958D1F700582552 /* ShiftPresentableTests.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
+		757D5BC6295B537B00ADE4A5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BC7295B538000ADE4A5 /* Client */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		757D5BC7295B538000ADE4A5 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				75B91EA929562DEC004AC54A /* APIClientTests.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		757D5BC8295B539D00ADE4A5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				757D5BCA295B53C900ADE4A5 /* ShiftsForDate+ShiftBuilder.swift */,
+				754BC491295949F100582552 /* ShiftsListInteractorStub.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		757D5BC9295B53AB00ADE4A5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				754BC48F295949BB00582552 /* APIClientMock.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		75B91E912955F01E004AC54A /* ShiftsList */ = {
@@ -232,12 +382,8 @@
 		75B91E942955F15D004AC54A /* ShiftsList */ = {
 			isa = PBXGroup;
 			children = (
-				75B91EA929562DEC004AC54A /* APIClientTests.swift */,
-				75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */,
-				75B91EBE29564FF6004AC54A /* ShiftsListServiceTests.swift */,
-				754BC4872958D1F700582552 /* ShiftPresentableTests.swift */,
-				754BC48F295949BB00582552 /* APIClientMock.swift */,
-				754BC491295949F100582552 /* ShiftsListInteractorStub.swift */,
+				757D5BC3295B535B00ADE4A5 /* UI */,
+				757D5BC2295B535500ADE4A5 /* Infrastructure */,
 			);
 			path = ShiftsList;
 			sourceTree = "<group>";
@@ -286,6 +432,7 @@
 		75B91EAC29564902004AC54A /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				757D5BB5295B520A00ADE4A5 /* Utilities */,
 				75B91EAE29564917004AC54A /* ShiftsList */,
 			);
 			path = Infrastructure;
@@ -294,6 +441,7 @@
 		75B91EAD2956490E004AC54A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				757D5BB2295B4ECF00ADE4A5 /* Utilities */,
 				75B91E912955F01E004AC54A /* ShiftsList */,
 			);
 			path = UI;
@@ -304,8 +452,6 @@
 			children = (
 				75B91EB129564938004AC54A /* DTO */,
 				75B91EAF29564923004AC54A /* ShiftsListService.swift */,
-				754BC49529594BAD00582552 /* Query.swift */,
-				754BC49729594BBD00582552 /* ShiftFilter.swift */,
 			);
 			path = ShiftsList;
 			sourceTree = "<group>";
@@ -329,6 +475,9 @@
 				2349FD88261E4F9900A1FEAA /* ShiftsListView.swift */,
 				754BC49329594AEC00582552 /* ShiftsListView+ShiftsSection.swift */,
 				754BC4852958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift */,
+				754BC49B295B1CDE00582552 /* ShiftsListView+CalendarHeader.swift */,
+				754BC49D295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift */,
+				757D5BB3295B519400ADE4A5 /* ShiftsListView.CalendarHeader+WeekCell+DayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +504,10 @@
 			children = (
 				75B91EB929564A0C004AC54A /* ShiftsForDatePresentable.swift */,
 				754BC48D295942E600582552 /* ShiftPresentable.swift */,
+				757D5BCC295B543000ADE4A5 /* DayOfAYear.swift */,
+				757D5BD0295B545000ADE4A5 /* WeekOfAYearIdentifable.swift */,
+				757D5BD2295B545F00ADE4A5 /* WeekOfAYear.swift */,
+				757D5BD6295B6FBC00ADE4A5 /* DayOfAYearIdentifiable.swift */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";
@@ -489,22 +642,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B91EB529564969004AC54A /* ShiftsForDateResponseDTO.swift in Sources */,
+				757D5BBE295B524E00ADE4A5 /* ISO8601Strategy.swift in Sources */,
 				754BC4862958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift in Sources */,
 				75B91E9629562271004AC54A /* Request.swift in Sources */,
 				75B91E982956228D004AC54A /* APIClient.swift in Sources */,
 				75B91E9B29562712004AC54A /* Headers.swift in Sources */,
+				754BC49E295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift in Sources */,
 				754BC47B2957DAD900582552 /* ShiftsForDateDTO+ShiftDTO+FacilityTypeDTO.swift in Sources */,
+				754BC49C295B1CDE00582552 /* ShiftsListView+CalendarHeader.swift in Sources */,
 				75B91EBA29564A0C004AC54A /* ShiftsForDatePresentable.swift in Sources */,
+				757D5BD7295B6FBC00ADE4A5 /* DayOfAYearIdentifiable.swift in Sources */,
 				75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */,
 				754BC47D2957DB7B00582552 /* ShiftsForDateDTO+ShiftDTO+SkillDTO.swift in Sources */,
+				757D5BB4295B519400ADE4A5 /* ShiftsListView.CalendarHeader+WeekCell+DayCell.swift in Sources */,
 				754BC47F2957DB8E00582552 /* ShiftsForDateDTO+ShiftDTO+LocalizedSpecialtyDTO.swift in Sources */,
+				757D5BD3295B545F00ADE4A5 /* WeekOfAYear.swift in Sources */,
 				754BC49629594BAD00582552 /* Query.swift in Sources */,
+				757D5BCF295B544100ADE4A5 /* Locale.swift in Sources */,
+				754BC49A295A8A0F00582552 /* Color.swift in Sources */,
+				757D5BCD295B543000ADE4A5 /* DayOfAYear.swift in Sources */,
+				757D5BD5295B547000ADE4A5 /* Date.swift in Sources */,
 				754BC4842957DEBA00582552 /* DefaultDecoder.swift in Sources */,
+				757D5BB1295B4E0C00ADE4A5 /* TimeZone.swift in Sources */,
+				757D5BC0295B525C00ADE4A5 /* NormalizedDateStrategy.swift in Sources */,
 				75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */,
 				75B91EBD29564F9E004AC54A /* NetworkConfiguration.swift in Sources */,
 				2349FD89261E4F9900A1FEAA /* ShiftsListView.swift in Sources */,
 				75B91EC129565B0C004AC54A /* Header.swift in Sources */,
+				754BC4A0295B45AB00582552 /* ShiftsForDate+Shift.swift in Sources */,
 				754BC49829594BBD00582552 /* ShiftFilter.swift in Sources */,
+				757D5BBC295B523800ADE4A5 /* OnlyDateStrategy.swift in Sources */,
 				75B91EA729562D42004AC54A /* Session.swift in Sources */,
 				754BC4792957DAD400582552 /* ShiftsForDateDTO+ShiftDTO.swift in Sources */,
 				75B91EB329564940004AC54A /* ShiftsForDateDTO.swift in Sources */,
@@ -512,9 +679,12 @@
 				754BC48E295942E600582552 /* ShiftPresentable.swift in Sources */,
 				75B91EA3295628B8004AC54A /* HTTPMethod.swift in Sources */,
 				754BC48C2958D94100582552 /* ShiftsForDate.swift in Sources */,
+				757D5BB8295B521E00ADE4A5 /* DateCodableStrategy.swift in Sources */,
 				75B91EB029564923004AC54A /* ShiftsListService.swift in Sources */,
+				757D5BD1295B545000ADE4A5 /* WeekOfAYearIdentifable.swift in Sources */,
 				754BC49429594AEC00582552 /* ShiftsListView+ShiftsSection.swift in Sources */,
 				75B91EA5295628C8004AC54A /* APIError.swift in Sources */,
+				757D5BBA295B522E00ADE4A5 /* DateFormatted.swift in Sources */,
 				2349FD5B261E4F6900A1FEAA /* CodingChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +694,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */,
+				754BC4A2295B4AD700582552 /* ShiftsForDatePresentableTests.swift in Sources */,
+				757D5BCB295B53C900ADE4A5 /* ShiftsForDate+ShiftBuilder.swift in Sources */,
 				754BC492295949F100582552 /* ShiftsListInteractorStub.swift in Sources */,
 				754BC4882958D1F700582552 /* ShiftPresentableTests.swift in Sources */,
 				75B91EBF29564FF6004AC54A /* ShiftsListServiceTests.swift in Sources */,
@@ -679,7 +851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CodingChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HRU3V63R2;
+				DEVELOPMENT_TEAM = 47QD4RVEE6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -687,7 +859,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shiftkey.CodingChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = shiftkey.CodingChallenge.dominikRygiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,7 +873,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CodingChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HRU3V63R2;
+				DEVELOPMENT_TEAM = 47QD4RVEE6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CodingChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -709,7 +881,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shiftkey.CodingChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = shiftkey.CodingChallenge.dominikRygiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

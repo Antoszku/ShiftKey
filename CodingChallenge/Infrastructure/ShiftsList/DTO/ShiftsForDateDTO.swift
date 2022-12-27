@@ -1,5 +1,7 @@
+import Foundation
+
 struct ShiftsForDateDTO: Decodable {
-    let date: String
+    @DateFormatted<OnlyDateStrategy> var date: Date
     let shifts: [ShiftDTO]
 }
 
