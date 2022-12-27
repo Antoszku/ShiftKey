@@ -22,7 +22,6 @@ extension ShiftsListView.CalendarHeader.WeekCell {
             }.frame(width: 40)
         }
 
-
         private func foregroundColor(for day: DayOfAYear) -> Color {
             if viewModel.currentDay == day.id {
                 return Color.white
@@ -34,4 +33,3 @@ extension ShiftsListView.CalendarHeader.WeekCell {
         }
     }
 }
-

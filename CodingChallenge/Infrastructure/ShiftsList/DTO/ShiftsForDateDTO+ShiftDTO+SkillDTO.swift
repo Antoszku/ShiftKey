@@ -11,4 +11,3 @@ extension ShiftsForDate.Shift.Skill {
         self.init(name: dto.name, color: dto.color)
     }
 }
-

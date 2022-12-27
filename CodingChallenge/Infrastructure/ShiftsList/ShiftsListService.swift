@@ -3,7 +3,6 @@ protocol ShiftsListService {
 }
 
 class DefaultShiftsListService: ShiftsListService {
-
     private let apiClient: APIClient
     private let url = "/api/v2/available_shifts/"
 

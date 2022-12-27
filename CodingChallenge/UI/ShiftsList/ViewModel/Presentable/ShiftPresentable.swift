@@ -22,15 +22,15 @@ extension ShiftPresentable {
         let startTime = dateFormatter.string(from: shift.normalizedStartDateTime)
         let endtime = dateFormatter.string(from: shift.normalizedEndDateTime)
 
-        self.id = shift.shiftId
-        self.workingHours = "\(startTime) - \(endtime)"
-        self.abbreviation = shift.localizedSpecialty.abbreviation
-        self.facilityType = shift.facilityType.name
-        self.premiumRate = shift.premiumRate
-        self.distance = "\(shift.withinDistance) miles"
-        self.skill = shift.skill.name.uppercased()
-        self.skillColor = shift.skill.color
-        
-        self.details = .init(shift: shift)
+        id = shift.shiftId
+        workingHours = "\(startTime) - \(endtime)"
+        abbreviation = shift.localizedSpecialty.abbreviation
+        facilityType = shift.facilityType.name
+        premiumRate = shift.premiumRate
+        distance = "\(shift.withinDistance) miles"
+        skill = shift.skill.name.uppercased()
+        skillColor = shift.skill.color
+
+        details = .init(shift: shift)
     }
 }

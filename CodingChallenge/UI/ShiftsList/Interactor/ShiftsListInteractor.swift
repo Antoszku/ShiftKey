@@ -3,7 +3,6 @@ protocol ShiftsListInteractor {
 }
 
 final class DefaultShiftsListInteractor: ShiftsListInteractor {
-
     private let service: ShiftsListService
 
     init(service: ShiftsListService = DefaultShiftsListService()) {

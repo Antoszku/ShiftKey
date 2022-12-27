@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ShiftsListView: View {
-
     @ObservedObject var viewModel: ShiftsListViewModel
 
     private let background = Color(#colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.9803921569, alpha: 1))
@@ -10,7 +9,7 @@ struct ShiftsListView: View {
         NavigationView {
             switch viewModel.state {
             case .loading: ProgressView()
-            case .sections(let sections): shiftList(sections: sections).navigationTitle("Shifts")
+            case let .sections(sections): shiftList(sections: sections).navigationTitle("Shifts")
             }
         }.background(background)
             .onAppear { onAppear() }

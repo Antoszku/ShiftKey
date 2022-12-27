@@ -8,6 +8,7 @@ extension ShiftsForDate {
             case eveningShift
             case unsupported
         }
+
         let shiftId: Int
         let startTime: Date
         let shiftType: ShiftType

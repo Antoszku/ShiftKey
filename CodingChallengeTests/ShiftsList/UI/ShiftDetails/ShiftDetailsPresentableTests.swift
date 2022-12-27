@@ -1,10 +1,9 @@
 
-import XCTest
-import SwiftUI
 @testable import CodingChallenge
+import SwiftUI
+import XCTest
 
 final class ShiftDetailsPresentableTests: XCTestCase {
-
     func test_init() {
         let expectedSpeciality = "Speciality"
         let expectedDistance = "Within 13 miles"
@@ -49,7 +48,6 @@ final class ShiftDetailsPresentableTests: XCTestCase {
         XCTAssertTrue(ShiftDetailsPresentable(shift: .build(premiumRate: true)).isPremiumRate)
         XCTAssertFalse(ShiftDetailsPresentable(shift: .build(premiumRate: false)).isPremiumRate)
     }
-
 
     func test_init_date() {
         let startTime = Date(timeIntervalSince1970: 0)

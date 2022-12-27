@@ -1,8 +1,7 @@
-import XCTest
 @testable import CodingChallenge
+import XCTest
 
 final class APIClientTests: XCTestCase {
-
     func test_sendRequest_callSessionDataFor_withCorrectRequest() async {
         let session = SessionServiceMock()
         let sut = makeSut(sessionService: session)
@@ -90,7 +89,6 @@ final class APIClientTests: XCTestCase {
             let _: String = try await sut.sendRequest(.build())
             XCTFail()
         } catch APIError.parsingError {
-
         } catch {
             XCTFail()
         }
@@ -108,7 +106,7 @@ final class APIClientTests: XCTestCase {
         do {
             let _: String = try await sut.sendRequest(.build())
             XCTFail()
-        } catch APIError.serverError(let code) {
+        } catch let APIError.serverError(code) {
             XCTAssertEqual(code, expectedCode)
         } catch {
             XCTFail()
@@ -116,11 +114,10 @@ final class APIClientTests: XCTestCase {
     }
 
     private func makeSut(sessionService: SessionService = SessionServiceMock(),
-                         networkConfiguration: NetworkConfiguration = NetworkConfiguration(scheme: "https", host: "google.pl")) -> DefaultAPIClient {
+                         networkConfiguration: NetworkConfiguration = NetworkConfiguration(scheme: "https", host: "google.pl")) -> DefaultAPIClient
+    {
         DefaultAPIClient(session: sessionService, networkConfiguration: networkConfiguration)
-
     }
-
 }
 
 extension Request {
@@ -128,7 +125,6 @@ extension Request {
         return .init(url: "/", method: method, headers: headers, query: query)
     }
 }
-
 
 final class SessionServiceMock: SessionService {
     var dataCalledWithRequest: URLRequest?
@@ -142,6 +138,4 @@ final class SessionServiceMock: SessionService {
 
 struct QueryStub: Query {
     var parameters: [String: String?]
-
-
 }

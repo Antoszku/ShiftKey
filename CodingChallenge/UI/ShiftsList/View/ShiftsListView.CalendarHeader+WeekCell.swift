@@ -2,7 +2,6 @@ import SwiftUI
 
 extension ShiftsListView.CalendarHeader {
     struct WeekCell: View {
-
         @EnvironmentObject var viewModel: ShiftsListViewModel
 
         let week: WeekOfAYear

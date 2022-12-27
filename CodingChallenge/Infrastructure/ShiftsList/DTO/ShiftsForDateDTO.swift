@@ -8,7 +8,6 @@ struct ShiftsForDateDTO: Decodable {
 extension ShiftsForDate {
     init(dto: ShiftsForDateDTO) {
         self.init(date: dto.date,
-                  shifts: dto.shifts.map { .init(dto: $0) }
-        )
+                  shifts: dto.shifts.map { .init(dto: $0) })
     }
 }

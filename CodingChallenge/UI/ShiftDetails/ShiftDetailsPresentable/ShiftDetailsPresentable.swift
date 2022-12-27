@@ -17,7 +17,6 @@ struct ShiftDetailsPresentable: Equatable {
     let premiumRate = "Premium Rate"
 
     init(shift: ShiftsForDate.Shift) {
-
         let timeFormatter = DateFormatter()
         timeFormatter.timeZone = .UTC
         timeFormatter.dateFormat = "h:mma"
@@ -26,33 +25,31 @@ struct ShiftDetailsPresentable: Equatable {
         let startTime = timeFormatter.string(from: shift.normalizedStartDateTime)
         let endtime = timeFormatter.string(from: shift.normalizedEndDateTime)
 
-
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .en_US
         dateFormatter.dateFormat = "E MMM d"
         let date = dateFormatter.string(from: shift.startTime)
 
-        self.speciality = shift.localizedSpecialty.name
-        self.distance = "Within \(shift.withinDistance) miles"
+        speciality = shift.localizedSpecialty.name
+        distance = "Within \(shift.withinDistance) miles"
         self.date = "\(date) \(startTime) - \(endtime)"
-        self.abbreviation = shift.localizedSpecialty.abbreviation
-        self.skill = shift.skill.name
-        self.isPremiumRate = shift.premiumRate
+        abbreviation = shift.localizedSpecialty.abbreviation
+        skill = shift.skill.name
+        isPremiumRate = shift.premiumRate
 
         switch shift.shiftType {
         case .nightShift:
-            self.shiftType = "Night Shift"
-            self.shiftTypeIcon = Image(systemName: "moon.fill")
+            shiftType = "Night Shift"
+            shiftTypeIcon = Image(systemName: "moon.fill")
         case .dayShift:
-            self.shiftType = "Day Shift"
-            self.shiftTypeIcon = Image(systemName: "sun.max.fill")
+            shiftType = "Day Shift"
+            shiftTypeIcon = Image(systemName: "sun.max.fill")
         case .eveningShift:
-            self.shiftType = "Evening Shift"
-            self.shiftTypeIcon = Image(systemName: "sun.and.horizon.fill")
+            shiftType = "Evening Shift"
+            shiftTypeIcon = Image(systemName: "sun.and.horizon.fill")
         case .unsupported:
-            self.shiftType = "Unknown"
-            self.shiftTypeIcon = Image(systemName: "clock.fill")
-
+            shiftType = "Unknown"
+            shiftTypeIcon = Image(systemName: "clock.fill")
         }
     }
 }

@@ -1,8 +1,7 @@
-import XCTest
 @testable import CodingChallenge
+import XCTest
 
 final class ShiftPresentableTests: XCTestCase {
-
     func test_init_withBasicValues() {
         let startDate = Date(timeIntervalSince1970: 7 * 60 * 60 + 30 * 60)
         let endDate = Date(timeIntervalSince1970: 13 * 60 * 60)
@@ -23,7 +22,6 @@ final class ShiftPresentableTests: XCTestCase {
                                                  premiumRate: expectedPremiumRate,
                                                  withinDistance: 11,
                                                  skill: .build(name: "skill", color: expectedSkillColor)))
-
 
         XCTAssertEqual(sut.id, expectedId)
         XCTAssertEqual(sut.workingHours, expectedWorkingHours)

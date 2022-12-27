@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ShiftDetailsView: View {
-
     @Environment(\.dismiss) private var dismiss
 
     let shift: ShiftDetailsPresentable
@@ -27,16 +26,14 @@ struct ShiftDetailsView: View {
             }.padding(.horizontal)
                 .frame(maxHeight: .infinity)
                 .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark").foregroundColor(.black).font(.headline)
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark").foregroundColor(.black).font(.headline)
+                        }
                     }
-                }
-            }.padding(.horizontal, 8)
+                }.padding(.horizontal, 8)
         }.background(background)
-
     }
-
 }

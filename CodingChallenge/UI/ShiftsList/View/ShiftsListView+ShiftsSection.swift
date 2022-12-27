@@ -2,7 +2,6 @@ import SwiftUI
 
 extension ShiftsListView {
     struct ShiftsSection: View {
-
         @State private var visibleSections = [ShiftsForDatePresentable]()
         @EnvironmentObject private var viewModel: ShiftsListViewModel
 
@@ -45,7 +44,6 @@ extension ShiftsListView {
                 Divider()
             }.background(headerBackground).padding(.horizontal)
         }
-
 
         private func setCalendar() {
             visibleSections.sort(by: { $0.id < $1.id })

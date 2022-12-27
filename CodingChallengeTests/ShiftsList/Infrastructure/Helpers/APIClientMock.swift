@@ -1,7 +1,6 @@
 @testable import CodingChallenge
 
 final class APIClientMock<T: Decodable>: APIClient {
-
     var sendRequestCalled: Request?
     var returnResponse: T?
 

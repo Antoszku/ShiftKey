@@ -6,11 +6,11 @@ struct WeekOfAYearIdentifable: Hashable {
     init(date: Date) {
         let year = date.get(.year)
         let weekOfYear = date.get(.weekOfYear)
-        self.id = "\(year)-\(weekOfYear)"
+        id = "\(year)-\(weekOfYear)"
     }
 
     init(dayOfAYear: DayOfAYear) {
-        self.id = "\(dayOfAYear.year)-\(dayOfAYear.weekOfYear)"
+        id = "\(dayOfAYear.year)-\(dayOfAYear.weekOfYear)"
     }
 
     static func == (lhs: WeekOfAYearIdentifable, rhs: WeekOfAYearIdentifable) -> Bool {

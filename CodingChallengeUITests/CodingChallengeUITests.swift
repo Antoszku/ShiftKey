@@ -7,6 +7,4 @@
 
 import XCTest
 
-class CodingChallengeUITests: XCTestCase {
-    
-}
+class CodingChallengeUITests: XCTestCase {}

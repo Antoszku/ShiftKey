@@ -8,8 +8,7 @@ struct ShiftFilter: Query {
         }
         return ["type": type?.rawValue,
                 "address": address,
-                "radius": radiusValue
-        ]
+                "radius": radiusValue]
     }
 
     enum ShiftType: String, Equatable {
@@ -17,6 +16,7 @@ struct ShiftFilter: Query {
         case forDay = "4day"
         case list
     }
+
     let type: ShiftType?
     let address: String
     let radius: Int? = 150

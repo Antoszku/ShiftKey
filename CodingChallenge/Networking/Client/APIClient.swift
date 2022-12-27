@@ -5,13 +5,13 @@ protocol APIClient {
 }
 
 final class DefaultAPIClient: APIClient {
-
     private let session: SessionService
     private let networkConfiguration: NetworkConfiguration
     private let decoder = DefaultDecoder()
 
     init(session: SessionService = DefaultSessionService(),
-         networkConfiguration: NetworkConfiguration = NetworkConfiguration()) {
+         networkConfiguration: NetworkConfiguration = NetworkConfiguration())
+    {
         self.session = session
         self.networkConfiguration = networkConfiguration
     }
@@ -26,7 +26,7 @@ final class DefaultAPIClient: APIClient {
             guard let response = response as? HTTPURLResponse else { fatalError("Should never happen") }
 
             switch response.statusCode {
-            case 200...299:
+            case 200 ... 299:
                 print("[Response]:")
                 printPrettyJson(for: data)
                 return try decoder.decode(data: data)
@@ -66,8 +66,8 @@ final class DefaultAPIClient: APIClient {
 
     private func printPrettyJson(for data: Data) {
         guard let object = try? JSONSerialization.jsonObject(with: data, options: []),
-            let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
-            let prettyPrintedString = String(data: data, encoding: .utf8) else { return }
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+              let prettyPrintedString = String(data: data, encoding: .utf8) else { return }
 
         print(prettyPrintedString)
     }

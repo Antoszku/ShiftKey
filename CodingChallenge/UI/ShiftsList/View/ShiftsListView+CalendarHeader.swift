@@ -2,7 +2,6 @@ import SwiftUI
 
 extension ShiftsListView {
     struct CalendarHeader: View {
-
         let scrollViewProxy: ScrollViewProxy
         @EnvironmentObject var viewModel: ShiftsListViewModel
 

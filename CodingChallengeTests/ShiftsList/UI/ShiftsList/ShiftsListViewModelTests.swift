@@ -1,8 +1,7 @@
-import XCTest
 @testable import CodingChallenge
+import XCTest
 
 final class ShiftsListViewModelTests: XCTestCase {
-
     private let eightDaysInterval: TimeInterval = 8 * 24 * 60 * 60
 
     func test_onAppear_callInteractorGetShifts() async {
@@ -75,8 +74,7 @@ final class ShiftsListViewModelTests: XCTestCase {
         let interactor = ShiftsListInteractorStub()
         let sut = makeSut(interactor: interactor)
         interactor.returnShifts = [expectedShift,
-                                       .build(dayOfAYear: .init(date: Date(timeIntervalSinceNow: eightDaysInterval)))
-        ]
+                                   .build(dayOfAYear: .init(date: Date(timeIntervalSinceNow: eightDaysInterval)))]
 
         await sut.onAppear()
 
@@ -92,7 +90,6 @@ final class ShiftsListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedShift, shift)
     }
 
-
     private func makeSut(interactor: ShiftsListInteractor = ShiftsListInteractorStub()) -> ShiftsListViewModel {
         return ShiftsListViewModel(interactor: interactor)
     }
@@ -100,15 +97,15 @@ final class ShiftsListViewModelTests: XCTestCase {
 
 private extension ShiftPresentable {
     static func build() -> Self {
-            .init(id: 0,
-                  workingHours: "",
-                  abbreviation: "",
-                  facilityType: "",
-                  skill: "",
-                  skillColor: "",
-                  premiumRate: true,
-                  distance: "",
-                  details: .init(shift: .build()))
+        .init(id: 0,
+              workingHours: "",
+              abbreviation: "",
+              facilityType: "",
+              skill: "",
+              skillColor: "",
+              premiumRate: true,
+              distance: "",
+              details: .init(shift: .build()))
     }
 }
 
@@ -116,7 +113,8 @@ private extension ShiftsForDatePresentable {
     static func build(dayOfAYear: DayOfAYear = .init(date: Date()),
                       weekId: WeekOfAYearIdentifable = .init(date: Date()),
                       headerTitle: String = "",
-                      shifts: [ShiftPresentable] = []) -> Self {
+                      shifts: [ShiftPresentable] = []) -> Self
+    {
         self.init(dayOfAYear: dayOfAYear, weekId: weekId, headerTitle: headerTitle, shifts: shifts)
     }
 }
