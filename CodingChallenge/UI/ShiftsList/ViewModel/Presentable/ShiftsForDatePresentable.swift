@@ -1,7 +1,10 @@
 import Foundation
 
 struct ShiftsForDatePresentable: Identifiable, Equatable {
-    let id: DayOfAYearIdentifiable
+    var id: DayOfAYearIdentifiable {
+        dayOfAYear.id
+    }
+    let dayOfAYear: DayOfAYear
     let weekId: WeekOfAYearIdentifable
     let headerTitle: String
     let shifts: [ShiftPresentable]
@@ -9,7 +12,7 @@ struct ShiftsForDatePresentable: Identifiable, Equatable {
 
 extension ShiftsForDatePresentable {
     init(domain: ShiftsForDate) {
-        self.id = DayOfAYearIdentifiable(date: domain.date)
+        self.dayOfAYear = DayOfAYear(date: domain.date)
         self.weekId = WeekOfAYearIdentifable(date: domain.date)
         self.shifts = domain.shifts.map { ShiftPresentable(shift: $0) }
 

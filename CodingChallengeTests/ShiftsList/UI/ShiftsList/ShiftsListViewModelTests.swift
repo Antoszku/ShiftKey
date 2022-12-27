@@ -2,6 +2,9 @@ import XCTest
 @testable import CodingChallenge
 
 final class ShiftsListViewModelTests: XCTestCase {
+
+    private let eightDaysInterval: TimeInterval = 8 * 24 * 60 * 60
+
     func test_onAppear_callInteractorGetShifts() async {
         let interactor = ShiftsListInteractorStub()
         let sut = ShiftsListViewModel(interactor: interactor)
@@ -57,22 +60,35 @@ final class ShiftsListViewModelTests: XCTestCase {
     func test_isDayEnable_returnFalse_whenIsEightDayFromToday() async {
         let sut = ShiftsListViewModel()
 
-        XCTAssertFalse(sut.isDayEnable(DayOfAYear(date: Date(timeIntervalSinceNow: 8 * 24 * 60 * 60))))
+        XCTAssertFalse(sut.isDayEnable(DayOfAYear(date: Date(timeIntervalSinceNow: eightDaysInterval))))
     }
-    
+
     func test_isDayEnable_returnFalse_whenIsDayBeforeToday() async {
         let sut = ShiftsListViewModel()
 
         XCTAssertFalse(sut.isDayEnable(DayOfAYear(date: Date(timeIntervalSinceNow: -24 * 60 * 60))))
     }
 
+    func test_onAppear_doNotShowSectionsWithDatesAfter8DayFromToday() async {
+        let expectedShift = ShiftsForDatePresentable.build()
+        let interactor = ShiftsListInteractorStub()
+        let sut = ShiftsListViewModel(interactor: interactor)
+        interactor.returnShifts = [expectedShift,
+                                       .build(dayOfAYear: .init(date: Date(timeIntervalSinceNow: eightDaysInterval)))
+        ]
+
+        await sut.onAppear()
+
+        XCTAssertEqual(sut.state, .sections([expectedShift]))
+    }
+
 }
 
 private extension ShiftsForDatePresentable {
-    static func build(id: DayOfAYearIdentifiable = .init(date: Date()),
+    static func build(dayOfAYear: DayOfAYear = .init(date: Date()),
                       weekId: WeekOfAYearIdentifable = .init(date: Date()),
                       headerTitle: String = "",
                       shifts: [ShiftPresentable] = []) -> Self {
-        self.init(id: id, weekId: weekId, headerTitle: headerTitle, shifts: shifts)
+        self.init(dayOfAYear: dayOfAYear, weekId: weekId, headerTitle: headerTitle, shifts: shifts)
     }
 }

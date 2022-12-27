@@ -14,6 +14,7 @@ final class ShiftsListViewModel: ObservableObject {
     @Published var weeks = [WeekOfAYear(date: Date()), WeekOfAYear(date: Date(timeIntervalSinceNow: weekInterval))]
 
     private let interactor: ShiftsListInteractor
+    private let eighthDayFromToday = DayOfAYear(date: Date(timeIntervalSinceNow: weekInterval))
 
     init(interactor: ShiftsListInteractor = DefaultShiftsListInteractor()) {
         self.interactor = interactor
@@ -22,7 +23,8 @@ final class ShiftsListViewModel: ObservableObject {
     func onAppear() async {
         do {
             let shifts = try await interactor.getShifts()
-            await setShifts(shifts)
+            let shiftsFiltered = shifts.filter { $0.dayOfAYear < eighthDayFromToday }
+            await setShifts(shiftsFiltered)
             print(shifts)
         } catch let error {
             print(error)
@@ -31,7 +33,7 @@ final class ShiftsListViewModel: ObservableObject {
     }
 
     func isDayEnable(_ day: DayOfAYear) -> Bool {
-        return day >= DayOfAYear(date: Date()) && day < DayOfAYear(date: Date(timeIntervalSinceNow: Self.weekInterval))
+        return day >= DayOfAYear(date: Date()) && day < eighthDayFromToday
     }
 
     @MainActor
