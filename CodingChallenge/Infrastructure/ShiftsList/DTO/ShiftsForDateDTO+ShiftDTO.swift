@@ -35,8 +35,8 @@ extension ShiftsForDate.Shift {
                   facilityType: .init(dto: dto.facilityType),
                   premiumRate: dto.premiumRate,
                   withinDistance: dto.withinDistance,
-                  skill: .init(dto: dto.skill)
-        )
+                  skill: .init(dto: dto.skill))
+
     }
 }
 
@@ -45,7 +45,7 @@ extension ShiftsForDate.Shift.ShiftType {
         switch dto.shiftKind {
         case .supported(let kind):
             switch kind {
-            case .nightShift: self  = .nightShift
+            case .nightShift: self = .nightShift
             case .dayShift: self = .dayShift
             case .eveningShift: self = .eveningShift
             }
