@@ -1,11 +1,11 @@
 @testable import CodingChallenge
 
 final class ShiftsListInteractorStub: ShiftsListInteractor {
-    var getShiftsCalled = false
+    var getShiftsCalled: (ShiftFilter.ShiftType, String)?
     var returnShifts = [ShiftsForDatePresentable]()
 
-    func getShifts() async -> [ShiftsForDatePresentable] {
-        getShiftsCalled = true
+    func getShifts(type: ShiftFilter.ShiftType, address: String) async throws -> [CodingChallenge.ShiftsForDatePresentable] {
+        getShiftsCalled = (type, address)
         return returnShifts
     }
 }

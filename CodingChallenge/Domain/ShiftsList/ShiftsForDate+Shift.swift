@@ -2,8 +2,15 @@ import Foundation
 
 extension ShiftsForDate {
     struct Shift: Equatable {
+        enum ShiftType {
+            case nightShift
+            case dayShift
+            case eveningShift
+            case unsupported
+        }
         let shiftId: Int
         let startTime: Date
+        let shiftType: ShiftType
         let normalizedStartDateTime: Date
         let normalizedEndDateTime: Date
         let localizedSpecialty: LocalizedSpeciality

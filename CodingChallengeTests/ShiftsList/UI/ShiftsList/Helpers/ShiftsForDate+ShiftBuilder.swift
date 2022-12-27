@@ -4,6 +4,7 @@ import XCTest
 extension ShiftsForDate.Shift {
     static func build(shiftId: Int = 0,
                       startTime: Date = Date(),
+                      shiftType: ShiftType = .dayShift,
                       normalizedStartDateTime: Date = Date(),
                       normalizedEndDateTime: Date = Date(),
                       localizedSpecialty: LocalizedSpeciality = .build(),
@@ -13,6 +14,7 @@ extension ShiftsForDate.Shift {
                       skill: Skill = .build()) -> Self {
             .init(shiftId: shiftId,
                   startTime: startTime,
+                  shiftType: shiftType,
                   normalizedStartDateTime: normalizedStartDateTime,
                   normalizedEndDateTime: normalizedEndDateTime,
                   localizedSpecialty: localizedSpecialty,

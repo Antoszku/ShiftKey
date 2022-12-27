@@ -4,8 +4,8 @@ extension ShiftsListView {
     struct ShiftsSection: View {
 
         @State private var visibleSections = [ShiftsForDatePresentable]()
-        @EnvironmentObject  private var viewModel: ShiftsListViewModel
-        
+        @EnvironmentObject private var viewModel: ShiftsListViewModel
+
         let section: ShiftsForDatePresentable
         private let headerBackground = Color(#colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.9803921569, alpha: 1))
 
@@ -20,7 +20,9 @@ extension ShiftsListView {
 
         private var content: some View {
             ForEach(section.shifts) { shift in
-                ShiftCell(shift: shift).onAppear {
+                ShiftCell(shift: shift).onTapGesture {
+                    viewModel.onShiftSelected(shift)
+                }.onAppear {
                     visibleSections.append(section)
                     setCalendar()
                 }.onDisappear {
@@ -29,13 +31,6 @@ extension ShiftsListView {
                     setCalendar()
                 }
             }
-        }
-        
-        private func setCalendar() {
-            visibleSections.sort(by: { $0.id < $1.id })
-            guard let firstVisibleSection = visibleSections.first else { return }
-            viewModel.currentDay = firstVisibleSection.id
-            viewModel.activeTab = firstVisibleSection.weekId
         }
 
         private var header: some View {
@@ -49,6 +44,14 @@ extension ShiftsListView {
                 }
                 Divider()
             }.background(headerBackground).padding(.horizontal)
+        }
+
+
+        private func setCalendar() {
+            visibleSections.sort(by: { $0.id < $1.id })
+            guard let firstVisibleSection = visibleSections.first else { return }
+            viewModel.currentDay = firstVisibleSection.id
+            viewModel.activeTab = firstVisibleSection.weekId
         }
     }
 }

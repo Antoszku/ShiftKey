@@ -1,5 +1,5 @@
 protocol ShiftsListInteractor {
-    func getShifts() async throws -> [ShiftsForDatePresentable]
+    func getShifts(type: ShiftFilter.ShiftType, address: String) async throws -> [ShiftsForDatePresentable]
 }
 
 final class DefaultShiftsListInteractor: ShiftsListInteractor {
@@ -10,8 +10,8 @@ final class DefaultShiftsListInteractor: ShiftsListInteractor {
         self.service = service
     }
 
-    func getShifts() async throws -> [ShiftsForDatePresentable] {
-        let shiftsForDateDTO = try await service.getShifts(filter: ShiftFilter(type: nil, address: "TX", radius: 150))
+    func getShifts(type: ShiftFilter.ShiftType, address: String) async throws -> [ShiftsForDatePresentable] {
+        let shiftsForDateDTO = try await service.getShifts(filter: ShiftFilter(type: type, address: address))
         return shiftsForDateDTO.map { ShiftsForDatePresentable(domain: $0) }
     }
 }

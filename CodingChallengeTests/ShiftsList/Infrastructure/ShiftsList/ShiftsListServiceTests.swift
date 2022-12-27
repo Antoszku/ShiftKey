@@ -5,10 +5,10 @@ final class ShiftsListServiceTests: XCTestCase {
     func test_getShifts_sendCorrectRequest() async {
         let expectedQueryParameters = ["type": "list",
                                        "address": "Cracow, PL",
-                                       "radius": "10"]
+                                       "radius": "150"]
         let apiClient = APIClientMock<String>()
         let sut = DefaultShiftsListService(apiClient: apiClient)
-        let filter = ShiftFilter(type: .list, address: "Cracow, PL", radius: 10)
+        let filter = ShiftFilter(type: .list, address: "Cracow, PL")
         
         _ = try? await sut.getShifts(filter: filter)
         
@@ -25,7 +25,7 @@ final class ShiftsListServiceTests: XCTestCase {
         let expectedResult = [ShiftsForDate(date: date, shifts: [])]
         let apiClient = APIClientMock<ShiftsForDateResponseDTO>()
         let sut = DefaultShiftsListService(apiClient: apiClient)
-        let filter = ShiftFilter(type: .list, address: "Cracow, PL", radius: 10)
+        let filter = ShiftFilter(type: .list, address: "Cracow, PL")
         apiClient.returnResponse = .init(data: dto)
         
         let result = try? await sut.getShifts(filter: filter)

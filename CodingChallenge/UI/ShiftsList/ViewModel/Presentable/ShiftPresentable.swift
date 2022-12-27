@@ -9,7 +9,10 @@ struct ShiftPresentable: Identifiable, Equatable {
     let skillColor: String
     let premiumRate: Bool
     let distance: String
+    let details: ShiftDetailsPresentable
+}
 
+extension ShiftPresentable {
     init(shift: ShiftsForDate.Shift) {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = .UTC
@@ -27,5 +30,7 @@ struct ShiftPresentable: Identifiable, Equatable {
         self.distance = "\(shift.withinDistance) miles"
         self.skill = shift.skill.name.uppercased()
         self.skillColor = shift.skill.color
+        
+        self.details = .init(shift: shift)
     }
 }

@@ -12,12 +12,12 @@ struct ShiftFilter: Query {
         ]
     }
 
-    enum ShiftType: String {
+    enum ShiftType: String, Equatable {
         case week
         case forDay = "4day"
         case list
     }
     let type: ShiftType?
     let address: String
-    let radius: Int?
+    let radius: Int? = 150
 }

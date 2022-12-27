@@ -3,6 +3,7 @@ import SwiftUI
 struct ShiftsListView: View {
 
     @ObservedObject var viewModel: ShiftsListViewModel
+
     private let background = Color(#colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.9803921569, alpha: 1))
 
     var body: some View {
@@ -29,6 +30,8 @@ struct ShiftsListView: View {
                     }
                 }
             }
+        }.sheet(item: $viewModel.selectedShift) { shift in
+            ShiftDetailsView(shift: shift.details)
         }
     }
 
