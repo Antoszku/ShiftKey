@@ -14,9 +14,12 @@ final class ShiftsListViewModel: ObservableObject {
     @Published var weeks = [WeekOfAYear(date: Date()), WeekOfAYear(date: Date(timeIntervalSinceNow: weekInterval))]
     @Published var selectedShift: ShiftPresentable? = nil
 
+    @Published private var favoriteShifts = Set<Int>()
+
     private let interactor: ShiftsListInteractor
     private let address = "Dallas, TX"
     private let eighthDayFromToday = DayOfAYear(date: Date(timeIntervalSinceNow: weekInterval))
+
 
     init(interactor: ShiftsListInteractor = DefaultShiftsListInteractor()) {
         self.interactor = interactor
@@ -27,6 +30,8 @@ final class ShiftsListViewModel: ObservableObject {
             let shifts = try await interactor.getShifts(type: .forDay, address: address)
             let shiftsFiltered = shifts.filter { $0.dayOfAYear < eighthDayFromToday }
             await setShifts(shiftsFiltered)
+            let favorites = interactor.getFavorites()
+            await setFavorites(favorites)
         } catch {
             print(error)
             // TODO: Handle Error
@@ -39,6 +44,25 @@ final class ShiftsListViewModel: ObservableObject {
 
     func onShiftSelected(_ shift: ShiftPresentable) {
         selectedShift = shift
+    }
+
+    func isFavorite(for id: Int) -> Bool {
+        return favoriteShifts.contains(id)
+    }
+
+    func onCellTapped(id: Int) {
+        if favoriteShifts.contains(id) {
+            favoriteShifts.remove(id)
+        } else {
+            favoriteShifts.insert(id)
+        }
+
+        interactor.setFavorites(favoriteShifts)
+    }
+
+    @MainActor
+    private func setFavorites(_ favorites: Set<Int>) {
+        self.favoriteShifts = favorites
     }
 
     @MainActor

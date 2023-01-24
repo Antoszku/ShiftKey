@@ -74,7 +74,7 @@ final class ShiftsListViewModelTests: XCTestCase {
         let interactor = ShiftsListInteractorStub()
         let sut = makeSut(interactor: interactor)
         interactor.returnShifts = [expectedShift,
-                                   .build(dayOfAYear: .init(date: Date(timeIntervalSinceNow: eightDaysInterval)))]
+                                       .build(dayOfAYear: .init(date: Date(timeIntervalSinceNow: eightDaysInterval)))]
 
         await sut.onAppear()
 
@@ -90,6 +90,59 @@ final class ShiftsListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedShift, shift)
     }
 
+    func test_isFavoriteReturnFalse() {
+        let sut = makeSut()
+
+        XCTAssertFalse(sut.isFavorite(for: 0))
+    }
+
+    func test_onCellTapped_shiftIsFavorite() {
+        let id = 1
+        let sut = makeSut()
+
+        sut.onCellTapped(id: id)
+
+        XCTAssertTrue(sut.isFavorite(for: id))
+    }
+
+    func test_onCellTappedTwice_shiftIsNotFavorite() {
+        let id = 1
+        let sut = makeSut()
+
+        sut.onCellTapped(id: id)
+        sut.onCellTapped(id: id)
+
+        XCTAssertFalse(sut.isFavorite(for: id))
+    }
+
+    func test_onCellTapped_callInteractorSetFavorites() {
+        let interactor = ShiftsListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+
+        sut.onCellTapped(id: 1)
+
+        XCTAssertEqual(interactor.setFavoriteCalled, [1])
+    }
+
+    func test_onAppear_callInteractorGetFavorites() async {
+        let interactor = ShiftsListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+
+        await sut.onAppear()
+
+        XCTAssertTrue(interactor.getFavoritesCalled)
+    }
+    
+    func test_onAppear_setFavorites() async {
+        let interactor = ShiftsListInteractorStub()
+        interactor.returnSetFavorites = [5]
+        let sut = makeSut(interactor: interactor)
+
+        await sut.onAppear()
+
+        XCTAssertTrue(sut.isFavorite(for: 5))
+    }
+
     private func makeSut(interactor: ShiftsListInteractor = ShiftsListInteractorStub()) -> ShiftsListViewModel {
         return ShiftsListViewModel(interactor: interactor)
     }
@@ -97,15 +150,15 @@ final class ShiftsListViewModelTests: XCTestCase {
 
 private extension ShiftPresentable {
     static func build() -> Self {
-        .init(id: 0,
-              workingHours: "",
-              abbreviation: "",
-              facilityType: "",
-              skill: "",
-              skillColor: "",
-              premiumRate: true,
-              distance: "",
-              details: .init(shift: .build()))
+            .init(id: 0,
+                  workingHours: "",
+                  abbreviation: "",
+                  facilityType: "",
+                  skill: "",
+                  skillColor: "",
+                  premiumRate: true,
+                  distance: "",
+                  details: .init(shift: .build()))
     }
 }
 

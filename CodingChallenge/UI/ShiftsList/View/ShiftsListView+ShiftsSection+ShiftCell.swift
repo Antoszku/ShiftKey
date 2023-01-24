@@ -2,12 +2,24 @@ import SwiftUI
 
 extension ShiftsListView.ShiftsSection {
     struct ShiftCell: View {
+        @EnvironmentObject var viewModel: ShiftsListViewModel
         let shift: ShiftPresentable
         private let shadowColor = Color(#colorLiteral(red: 0.2078431373, green: 0.2470588235, blue: 0.368627451, alpha: 1))
         private let starImage = Image(systemName: "star.circle.fill")
 
         var body: some View {
             VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    VStack {
+                        if viewModel.isFavorite(for: shift.id) {
+                            Image(systemName: "heart.fill")
+                        } else {
+                            Image(systemName: "heart")
+                        }
+                    }.onTapGesture {
+                        viewModel.onCellTapped(id: shift.id)
+                    }
+                }
                 HStack {
                     Text(shift.workingHours).font(.subheadline)
                     Spacer()

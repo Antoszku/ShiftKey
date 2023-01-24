@@ -51,6 +51,9 @@
 		757D5BDD295B8D4400ADE4A5 /* ShiftDetailsView+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BDC295B8D4400ADE4A5 /* ShiftDetailsView+Row.swift */; };
 		757D5BDF295B8D8700ADE4A5 /* ShiftDetailsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BDE295B8D8700ADE4A5 /* ShiftDetailsPresentable.swift */; };
 		757D5BE4295B8E6A00ADE4A5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D5BE3295B8E6A00ADE4A5 /* View.swift */; };
+		75B806C52971AF210052BF5A /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B806C42971AF210052BF5A /* FavoriteService.swift */; };
+		75B806C82971AF460052BF5A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B806C72971AF460052BF5A /* UserDefaults.swift */; };
+		75B806CC2971B0DC0052BF5A /* FavoriteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B806CB2971B0DC0052BF5A /* FavoriteServiceTests.swift */; };
 		75B91E8E2955EFA8004AC54A /* ShiftsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */; };
 		75B91E902955EFB2004AC54A /* ShiftsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */; };
 		75B91E932955F159004AC54A /* ShiftsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */; };
@@ -138,6 +141,9 @@
 		757D5BDC295B8D4400ADE4A5 /* ShiftDetailsView+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShiftDetailsView+Row.swift"; sourceTree = "<group>"; };
 		757D5BDE295B8D8700ADE4A5 /* ShiftDetailsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailsPresentable.swift; sourceTree = "<group>"; };
 		757D5BE3295B8E6A00ADE4A5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		75B806C42971AF210052BF5A /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		75B806C72971AF460052BF5A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		75B806CB2971B0DC0052BF5A /* FavoriteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceTests.swift; sourceTree = "<group>"; };
 		75B91E8D2955EFA8004AC54A /* ShiftsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModel.swift; sourceTree = "<group>"; };
 		75B91E8F2955EFB2004AC54A /* ShiftsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListInteractor.swift; sourceTree = "<group>"; };
 		75B91E922955F159004AC54A /* ShiftsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsListViewModelTests.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 		2349FD59261E4F6900A1FEAA /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				75B806C62971AF350052BF5A /* UserDefaults */,
 				754BC4892958D92B00582552 /* Domain */,
 				75B91EAD2956490E004AC54A /* UI */,
 				75B91EAC29564902004AC54A /* Infrastructure */,
@@ -228,6 +235,7 @@
 		2349FD6B261E4F6A00A1FEAA /* CodingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				75B806C92971B0C90052BF5A /* Infrastructure */,
 				757D5BC6295B537B00ADE4A5 /* Networking */,
 				75B91E942955F15D004AC54A /* ShiftsList */,
 				2349FD6E261E4F6A00A1FEAA /* Info.plist */,
@@ -415,6 +423,39 @@
 			path = ShiftDetailsPresentable;
 			sourceTree = "<group>";
 		};
+		75B806C32971AF160052BF5A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				75B91EAF29564923004AC54A /* ShiftsListService.swift */,
+				75B806C42971AF210052BF5A /* FavoriteService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		75B806C62971AF350052BF5A /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				75B806C72971AF460052BF5A /* UserDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		75B806C92971B0C90052BF5A /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				75B806CA2971B0D10052BF5A /* ShiftsList */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		75B806CA2971B0D10052BF5A /* ShiftsList */ = {
+			isa = PBXGroup;
+			children = (
+				75B806CB2971B0DC0052BF5A /* FavoriteServiceTests.swift */,
+			);
+			path = ShiftsList;
+			sourceTree = "<group>";
+		};
 		75B91E912955F01E004AC54A /* ShiftsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,8 +538,8 @@
 		75B91EAE29564917004AC54A /* ShiftsList */ = {
 			isa = PBXGroup;
 			children = (
+				75B806C32971AF160052BF5A /* Service */,
 				75B91EB129564938004AC54A /* DTO */,
-				75B91EAF29564923004AC54A /* ShiftsListService.swift */,
 			);
 			path = ShiftsList;
 			sourceTree = "<group>";
@@ -693,6 +734,7 @@
 				754BC4862958D1BB00582552 /* ShiftsListView+ShiftsSection+ShiftCell.swift in Sources */,
 				75B91E9629562271004AC54A /* Request.swift in Sources */,
 				75B91E982956228D004AC54A /* APIClient.swift in Sources */,
+				75B806C82971AF460052BF5A /* UserDefaults.swift in Sources */,
 				75B91E9B29562712004AC54A /* Headers.swift in Sources */,
 				757D5BDA295B7A1700ADE4A5 /* ShiftDetailsView.swift in Sources */,
 				754BC49E295B1CE500582552 /* ShiftsListView.CalendarHeader+WeekCell.swift in Sources */,
@@ -707,6 +749,7 @@
 				757D5BD3295B545F00ADE4A5 /* WeekOfAYear.swift in Sources */,
 				754BC49629594BAD00582552 /* Query.swift in Sources */,
 				757D5BCF295B544100ADE4A5 /* Locale.swift in Sources */,
+				75B806C52971AF210052BF5A /* FavoriteService.swift in Sources */,
 				754BC49A295A8A0F00582552 /* Color.swift in Sources */,
 				757D5BCD295B543000ADE4A5 /* DayOfAYear.swift in Sources */,
 				757D5BE4295B8E6A00ADE4A5 /* View.swift in Sources */,
@@ -750,6 +793,7 @@
 				754BC492295949F100582552 /* ShiftsListInteractorStub.swift in Sources */,
 				754BC4882958D1F700582552 /* ShiftPresentableTests.swift in Sources */,
 				75B91EBF29564FF6004AC54A /* ShiftsListServiceTests.swift in Sources */,
+				75B806CC2971B0DC0052BF5A /* FavoriteServiceTests.swift in Sources */,
 				7564622A295B94BB002F995F /* ShiftDetailsPresentableTests.swift in Sources */,
 				75B91EAA29562DEC004AC54A /* APIClientTests.swift in Sources */,
 				754BC490295949BB00582552 /* APIClientMock.swift in Sources */,
